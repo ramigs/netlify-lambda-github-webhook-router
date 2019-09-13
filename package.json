@@ -1,0 +1,24 @@
+{
+  "name": "netlify-lambda-github-webhook-router",
+  "version": "1.0.0",
+  "description": "Parsing GitHub's push Webhook to decide whether or not to trigger the build and deploy",
+  "main": "index.js",
+  "scripts": {
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramigs/netlify-lambda-github-webhook-router.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramigs/netlify-lambda-github-webhook-router/issues"
+  },
+  "homepage": "https://github.com/ramigs/netlify-lambda-github-webhook-router#readme",
+  "dependencies": {
+    "netlify-lambda": "^1.6.3"
+  }
+}
