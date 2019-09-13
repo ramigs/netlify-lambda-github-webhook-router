@@ -1,8 +1,8 @@
 exports.handler = function(event, context, callback) {
 
-/*     const { ref } = JSON.parse(event.body)
+    const { head_commit } = JSON.parse(event.body)
 
-    const send = ref => {
+    /* const send = ref => {
         callback(null, {
             statusCode: 200,
             body: JSON.stringify({ msg: 'Hello ' + ref})
@@ -11,7 +11,7 @@ exports.handler = function(event, context, callback) {
 
     // Make sure HTTP method is POST
     if (event.httpMethod == 'POST') {
-        console.log(JSON.parse(event.body));
+        console.log(head_commit);
         //send(ref);
     }
 }
