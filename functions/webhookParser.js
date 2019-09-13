@@ -11,7 +11,7 @@ exports.handler = function(event, context, callback) {
 
     // Make sure HTTP method is POST
     if (event.httpMethod == 'POST') {
-        console.log(SON.parse(event.body));
+        console.log(JSON.parse(event.body));
         //send(ref);
     }
 }
