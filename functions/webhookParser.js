@@ -23,6 +23,9 @@ exports.handler = function(event, context, callback) {
 
     // Make sure HTTP method is POST
     if (event.httpMethod == 'POST') {
+        console.log(added);
+        console.log(removed);
+        console.log(modified);
         send(added, removed, modified);
     }
 }
