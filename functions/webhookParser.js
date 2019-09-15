@@ -1,6 +1,19 @@
 exports.handler = function(event, context, callback) {
 
-    let listOfSiteFolders = ['01-JavaScript-Drum-Kit', '02-JS-and-CSS-Clock', '03-CSS-Variables'];
+    let sites = [
+        {
+            siteFolder: "01-JavaScript-Drum-Kit",
+            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
+        }, 
+        {
+            siteFolder: "02-JS-and-CSS-Clock",
+            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
+        },
+        {
+            siteFolder: "03-CSS-Variables",
+            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f" 
+        }
+    ]
 
     const { head_commit: { added, removed, modified } } = JSON.parse(event.body)
 
@@ -19,14 +32,15 @@ exports.handler = function(event, context, callback) {
     // Make sure HTTP method is POST
     if (event.httpMethod == 'POST') {
 
-        listOfSiteFolders.forEach(siteFolder => {
-            let allFiles = added.concat(removed, modified);
+        let allFiles = added.concat(removed, modified);
 
-            if (allFiles.some(file => file.includes(siteFolder))) {
-                console.log(siteFolder);
+        sites.forEach(site => {
+            
+            if (allFiles.some(file => file.includes(site.siteFolder))) {
+                console.log(site.siteFolder);
             }
         });
 
-        send(added, removed, modified);
+        //send(added, removed, modified);
     }
 }
