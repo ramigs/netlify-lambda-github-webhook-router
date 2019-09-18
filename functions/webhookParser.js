@@ -39,7 +39,7 @@ exports.handler = function(event, context, callback) {
             }
         };
         
-        /* sites.forEach(async ({ siteFolder, netlifyEndPoint }) => {
+        sites.forEach(async ({ siteFolder, netlifyEndPoint }) => {
             const isSiteFolder = allFiles.some(file => file.includes(siteFolder));
             
             if (isSiteFolder) {
@@ -47,17 +47,14 @@ exports.handler = function(event, context, callback) {
                 console.log(netlifyEndPoint);
         
                 try {
-                    //const result = await fetch(netlifyEndPoint, fetchOptions).then(console.log);
-                    const result = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(console.log);
+                    const result = await fetch(netlifyEndPoint, fetchOptions).then(console.log);
         
-                    //console.log(result);
+                    console.log(result);
                 } catch (error) {
                   console.log({ error });
                 }
             }
-        }); */
-
-        const result = fetch('https://jsonplaceholder.typicode.com/todos/1').then(console.log);
+        });
 
         send(added, removed, modified);
     }
