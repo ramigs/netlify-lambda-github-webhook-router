@@ -40,6 +40,7 @@ exports.handler = function(event, context, callback) {
         };
         
         sites.forEach(async ({ siteFolder, netlifyEndPoint }) => {
+            
             const isSiteFolder = allFiles.some(file => file.includes(siteFolder));
             
             if (isSiteFolder) {
@@ -48,8 +49,6 @@ exports.handler = function(event, context, callback) {
         
                 try {
                     const result = await fetch(netlifyEndPoint, fetchOptions).then(console.log);
-        
-                    console.log(result);
                 } catch (error) {
                   console.log({ error });
                 }
