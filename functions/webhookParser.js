@@ -1,17 +1,15 @@
+const fetch = require('node-fetch').default;
+
 exports.handler = function(event, context, callback) {
 
     let sites = [
         {
             siteFolder: "01-JavaScript-Drum-Kit",
-            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
+            netlifyEndPoint: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
         }, 
         {
             siteFolder: "02-JS-and-CSS-Clock",
-            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
-        },
-        {
-            siteFolder: "03-CSS-Variables",
-            netlifyEndPoind: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f" 
+            netlifyEndPoint: "https://api.netlify.com/build_hooks/5d7fb3beeccc183b2829a418"
         }
     ]
 
@@ -34,13 +32,33 @@ exports.handler = function(event, context, callback) {
 
         let allFiles = added.concat(removed, modified);
 
-        sites.forEach(site => {
-            
-            if (allFiles.some(file => file.includes(site.siteFolder))) {
-                console.log(site.siteFolder);
+        const fetchOptions = {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/x-www-form-urlencoded'
             }
-        });
+        };
+        
+        /* sites.forEach(async ({ siteFolder, netlifyEndPoint }) => {
+            const isSiteFolder = allFiles.some(file => file.includes(siteFolder));
+            
+            if (isSiteFolder) {
+                console.log(`Triggering deploy for ${siteFolder}`);
+                console.log(netlifyEndPoint);
+        
+                try {
+                    //const result = await fetch(netlifyEndPoint, fetchOptions).then(console.log);
+                    const result = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(console.log);
+        
+                    //console.log(result);
+                } catch (error) {
+                  console.log({ error });
+                }
+            }
+        }); */
 
-        //send(added, removed, modified);
+        const result = fetch('https://jsonplaceholder.typicode.com/todos/1').then(console.log);
+
+        send(added, removed, modified);
     }
 }

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ramigs/netlify-lambda-github-webhook-router#readme",
   "dependencies": {
-    "netlify-lambda": "^1.6.3"
+    "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.6.0"
   }
 }
