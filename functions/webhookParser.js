@@ -54,6 +54,7 @@ exports.handler = function(event, context, callback) {
             }
         };
         
+        console.log({sites});
         sites.forEach(async ({ siteFolder, netlifyEndPoint }) => {
             
             const isSiteFolder = allFiles.some(file => file.includes(siteFolder));
