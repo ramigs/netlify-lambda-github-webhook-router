@@ -4,17 +4,6 @@ const fetch = require('node-fetch').default;
 exports.handler = function(event, context, callback) {
 
     const { head_commit: { added, removed, modified } } = JSON.parse(event.body)
-
-    /* let sites = [
-        {
-            siteFolder: "01-JavaScript-Drum-Kit",
-            netlifyEndPoint: "https://api.netlify.com/build_hooks/5d7e2fff8202d6a2a653d93f"
-        }, 
-        {
-            siteFolder: "02-JS-and-CSS-Clock",
-            netlifyEndPoint: "https://api.netlify.com/build_hooks/5d7fb3beeccc183b2829a418"
-        }
-    ] */
     
     let siteFolder = process.env['SITE_1_FOLDER'];
     let siteNetlifyEndpoint = process.env['SITE_1_NETLIFY_ENDPOINT'];
