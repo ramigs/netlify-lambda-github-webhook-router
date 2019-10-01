@@ -69,16 +69,16 @@ If you send the following HTTP request, and you have `11-Custom-Video-Player` si
 
 Create a new site on Netlify, and connect your function's repo to it.
 
-## Add sites and endpoints to Netlify
+### Add sites and endpoints to Netlify
 
 Through Netlify's UI, create your environment variables in your function's site, following the same format of `.env`.
 
 PS: If you make changes to variables, a new build and deploy is required to force variables to be reloaded.
 
-## GitHub Webhook to Netlify function
+### GitHub Webhook to Netlify function
 
 Configure GitHub to send the `push` Webhook to the deployed function's Netlify endpoint.
 
-# Ask Netlify Support to disable automatic deploys
+### Ask Netlify Support to disable automatic deploys
 
 Request disabling of automatic deploys for all your sites in the mono-repository, **while still maintaining the repo linked to Netlify**, as mentioned [here](https://community.netlify.com/t/common-issue-how-can-i-disable-automatic-git-deploys/166/2).
