@@ -1,5 +1,7 @@
 # netlify-lambda-github-webhook-router
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ramigs/netlify-lambda-github-webhook-router)
+
 Netlify Lambda Function that listens to GitHub's `push` Webhook, verifying which sites/folders include file changes, and triggering Netlify's build hook **only** for those specific sites.
 
 This is useful if you have a mono-repository with multiple sites, and would like
