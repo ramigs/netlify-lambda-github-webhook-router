@@ -84,3 +84,7 @@ Configure GitHub to send the `push` Webhook to the deployed function's Netlify e
 ### Ask Netlify Support to disable automatic deploys
 
 Request disabling of automatic deploys for all your sites in the mono-repository, **while still maintaining the repo linked to Netlify**, as mentioned [here](https://community.netlify.com/t/common-issue-how-can-i-disable-automatic-git-deploys/166/2).
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE.md).
